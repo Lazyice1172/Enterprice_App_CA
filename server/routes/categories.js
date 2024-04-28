@@ -40,6 +40,8 @@ router.post("/", async (req, res) => {
         let newDocument = {
             id: req.body.id,
             name: req.body.name,
+            path: req.body.path || [],
+            subCategories: req.body.subCategories || [],
         };
         let collection = await db.collection("categories");
         let result = await collection.insertOne(newDocument);

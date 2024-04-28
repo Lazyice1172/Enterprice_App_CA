@@ -5,27 +5,23 @@ import BackButton from '../components/BackButton'
 import Spinner from '../components/Spinner'
 
 
-const ShowCategorie = () => {
+const ShowCategories = () => {
     const [categorie, setCategorie] = useState({})
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
         setLoading(true)
-        axios
-            .get(`http://localhost:5050/catalogue/${id}`)
-            .then((res) => {
-                setCategorie(res.data)
-                setLoading(false)
-            })
-            .catch((err) => {
-                console.log(err)
-                setLoading(false)
-            })
+        axios.get(`http://localhost:5050/categories/${id}`)
+        .then((res) => {
+            setCategorie(res.data)
+            setLoading(false)
+        })
+        .catch((err) => {
+            console.log(err)
+            setLoading(false)
+        })
     }, [])
-
-
-
     return (
         <div className='p-4'>
             <BackButton />
@@ -64,4 +60,4 @@ const ShowCategorie = () => {
     )
 }
 
-export default ShowCategorie
+export default ShowCategories
