@@ -9,11 +9,32 @@ import { ObjectId } from "mongodb";
 const router = express.Router();
 
 // This section will help you get a list of all the categories.
+// router.get('/', async (req, res) => {
+//     let collection = await db.collection("categories")
+//     let results = await collection.find({}).toArray()
+//     res.status(200).send(results);
+// })
+
 router.get('/', async (req, res) => {
-    let collection = await db.collection("categories")
-    let results = await collection.find({}).toArray()
-    res.status(200).send(results);
-})
+    const { name } = req.query; // Get the search query from request parameters
+
+    try {
+        const collection = await db.collection("categories");
+
+        // If a name query is provided, use it to filter categories
+        let query = {}; // Default to an empty query
+
+        if (name) {
+            query.name = { $regex: new RegExp(name, 'i') }; // Case-insensitive search
+        }
+
+        const results = await collection.find(query).toArray(); // Fetch matching results
+        res.status(200).send(results); // Send the results back
+    } catch (error) {
+        console.error("Error fetching categories:", error);
+        res.status(500).send("Error fetching categories");
+    }
+});
 
 // This section will help you get a single categories by id
 router.get("/:id", async (req, res) => {
