@@ -72,8 +72,8 @@ const CreateCategories = () => {
           <input
             type="text"
             value={path}
-            onChange={(e) => setpath(e.target.value)}
-            className="border-2 border-gray-500 px-4 py-2 w-full"
+            onChange={(e) => setPath(e.target.value)}
+            className=' border-2 border-gray-500 px-4 py-2 w-full'
           />
 
           <label className="text-xl mt-4 text-gray-500">Subcategories (Format: id:name, id:name...)</label>

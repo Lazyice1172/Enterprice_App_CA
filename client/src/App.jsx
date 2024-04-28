@@ -15,7 +15,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/categories/create" element={<CreateCategories />} />
       <Route path="/categories/show/:id" element={<ShowCategories />} />
-      <Route path="/categories/edit/:id" element={<EditCategories />} />
+      <Route path="/categories/edit/:categoryID" element={<EditCategories />} />
       <Route path="/categories/delete/:id" element={<DeleteCategories />} />
     </Routes>
   )
