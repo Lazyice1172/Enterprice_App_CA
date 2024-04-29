@@ -31,6 +31,15 @@ const SubPage = () => {
         to search and filter results. This is achieved through AJAX GET requests made via axios to the backend.
       </p>
       <p className='mb-4'>
+        <code>axios.RESTfulAPI(`URL`)</code> is an AJAX method used to retrieve data from the server, with the response data stored in the component's state.
+      </p>
+      <ul className='list-disc list-inside mb-4'>
+        <li><code>`GET`</code> the get method will request data from the server.</li>
+        <li><code>`POST`</code> the post method will send data to the server.</li>
+        <li><code>`PUT`</code> the put method will update data on the server.</li>
+        <li><code>`DELETE`</code> the delete method will delete data from the server.</li>
+      </ul>
+      <p className='mb-4'>
         Each page, similar to the Home page, uses axios to send RESTful API requests to the backend,
         handling data retrieval or updates as required.
       </p>
@@ -47,6 +56,34 @@ const SubPage = () => {
       <p>
         The use of the cors module allows the server to accept requests from clients on different ports, enhancing cross-origin resource sharing capabilities.
       </p>
+
+      <h3 className='text-2xl my-4'>Technology Used</h3>
+      <ul className='list-disc list-inside mb-4'>
+        <li>Vite</li>
+        <li>React</li>
+        <li>Tailwind</li>
+        <li>Express</li>
+        <li>Node</li>
+        <li>MongoDB</li>
+      </ul>
+
+      <h3 className='text-2xl my-4'>Weakness with this application</h3>
+      <p className='mb-4'>
+        This application didn't store the data in the client side, which cause it need to fetch the data from the server every time the page is refreshed.
+      </p>
+
+      <p className='mb-4'>
+        This Website didn't a have a good UI/UX design, which make it hard to use.
+      </p>
+
+      <h3 className='text-2xl my-4'>What can improve in my application</h3>
+      <p className='mb-4'>
+        To improve this application :
+      </p>
+      <ul className='list-disc list-inside mb-4'>
+        <li>First, the client should implement a client-side data storage like localStorage or sessionStorage to store data locally on the client-side to prevent fetch the data from the server every time the page is refreshed </li>
+        <li>Second, Enhace UI/UX design, </li>
+      </ul>
     </div>
   );
 }
