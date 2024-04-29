@@ -78,12 +78,19 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         let id = { _id: new ObjectId(req.params.id) };
+        if (!req.body.name || typeof req.body.name !== 'string') {
+            res.status(400).send("Invalid or missing 'name'");
+            return;
+        }
         let updatedDocument = {
             $set: {
                 id: req.body.id,
                 name: req.body.name,
+                path: req.body.path || [],
+                subCategories: req.body.subCategories || [],
             },
         };
+
 
         let collection = await db.collection("categories");
         let result = await collection.updateOne(id, updatedDocument);
