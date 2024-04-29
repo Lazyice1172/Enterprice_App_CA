@@ -41,9 +41,17 @@ const Home = () => {
         <div className="p-4">
             <div className="flex justify-between items-center">
                 <h1 className="text-3xl my-8">Categories List</h1>
-                <Link to="/categories/create">
-                    <MdOutlineAddBox className="text-sky-800 text-4xl" />
-                </Link>
+                <div className="flex items-center gap-4"> {/* Container for links */}
+                    <Link to="/categories/create">
+                        <MdOutlineAddBox className="text-sky-800 text-4xl" />
+                    </Link>
+
+                    <Link to="/subpage">
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded">
+                            Go to Subpage
+                        </button>
+                    </Link>
+                </div>
             </div>
             
             <div className="mb-4 flex"> 

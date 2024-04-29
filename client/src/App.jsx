@@ -8,6 +8,7 @@ import CreateCategories from './pages/CreateCategories.jsx'
 import DeleteCategories from './pages/DeleteCategories.jsx'
 import ShowCategories from './pages/ShowCategories.jsx'
 import EditCategories from './pages/EditCategories.jsx'
+import SubPage from './pages/SubPage.jsx'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/categories/show/:id" element={<ShowCategories />} />
       <Route path="/categories/edit/:categoryID" element={<EditCategories />} />
       <Route path="/categories/delete/:id" element={<DeleteCategories />} />
+      <Route path="/subpage" element={<SubPage />} />
     </Routes>
   )
 }
