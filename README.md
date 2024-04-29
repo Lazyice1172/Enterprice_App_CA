@@ -43,27 +43,36 @@ Due to there have lots of data may take some time to load
 
 
 ## Description
-## How Client work
 
-The App.jsx takes users to different pages based on url
-All of these pages and inside off the pages file
-- Home
+### How the Front-End Develops and Functions
+
+The front-end utilizes Vite to create a React app.
+
+Its utilization of native ES modules and on-demand compilation results in faster development server startup times, quicker module resolution, and faster HMR. These optimizations can lead to a smoother and more efficient development experience.
+
+The primary component, App.jsx, manages routing and directs users to the appropriate components:
+
+- Home 
 - CreateCategories
 - DeleteCategories
 - EditCategories
 - ShowCategories
 
-These Web pages use AJAX to send a RESTful API to the server side and get the data
-These data will display all the screen
+The Home page displays data from the database in a list and provides a search function to filter the data.
 
-## How Server work
-The server connect to the MongoDB database URL mongodb://localhost:27017 and PORT 5050
-These information stored in config.env
+It employs axios to create an AJAX GET request to the backend using the URL to retrieve data from MongoDB.
 
-When you turn on the server with npm run dev
-This code will go to server.js first and import categories.js
-The categories.js import connection.js
+Data is stored in categories and displayed using map.
 
-The connection.js will connect to MongoDB Compass with the URL and export the database is going to use 'Categories'
-The categories.js contain all the route the handle the request from client
-Finally, The server.js will open a 5050 PORT to listen the client
+The rest of the pages follow a similar pattern to the Home page, utilizing different RESTful APIs to send AJAX requests to the backend for retrieving or uploading data.
+
+
+### How the Back-End Develops and Functions
+
+The back-end is developed with ExpressJS.
+
+- connection.js connects to the MongoDB database.
+- categories.js handles all routes from the client and uploads or retrieves data from MongoDB.
+- server.js opens port 5050 to listen for requests.
+
+The cors Node module allows receiving requests from clients with different ports.
