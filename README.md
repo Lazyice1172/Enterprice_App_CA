@@ -20,6 +20,8 @@ Backend
 - MongoDB
 
 ## How to Run it
+Open your terminal and enter some commands
+
 First, you need to install all node_modules in server
 ```
 cd server
@@ -38,7 +40,7 @@ npm i
 npm run dev
 ```
 
-Finally, you can open your browser and go to http://localhost:5173
+Finally, you can open your browser and go to http://localhost:8000
 Due to there have lots of data may take some time to load
 
 
